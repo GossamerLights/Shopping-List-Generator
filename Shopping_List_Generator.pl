@@ -41,6 +41,7 @@ sub another {
 		open RECIPIE, "/home/mattie/Documents/Recipies/$name.csv" or die "Recipie not found because $!\n";
 		shopping();
 	} else {
+		#Change file path to your specific file path, leaving file name /Shopping_List.txt at the end
 		open SHOPPINGLIST, ">/home/mattie/Documents/Recipies/Shopping_List.txt" or die "Shopping_List not created because $!\n";
 		foreach my $key (keys %totals) {
 			print SHOPPINGLIST "$totals{$key}\t$key \n";
