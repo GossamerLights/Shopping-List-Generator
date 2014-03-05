@@ -2,11 +2,14 @@
 use warnings;
 use strict;
 
+#Start with Read Me
+
 print "Enter meal you want to make ";
-my $name = <STDIN>;
+my $name = <STDIN>; #enter name of recipie file without .csv extension. Ex: Spaghetti.csv (filename) enter Spaghetti
 chomp($name);
 
-open RECIPIE, "/home/mattie/Documents/Recipies/$name.csv" or die "Recipie not found because $!\n";
+#Change file path to your specific file path, leaving variable /$name.csv at the end
+open RECIPIE, "/home/mattie/Documents/Recipies/$name.csv" or die "Recipie not found because $!\n"; 
 
 my %ingrediants;
 my @item;
@@ -27,12 +30,12 @@ sub shopping {
 
 sub another {
 	print "Do you want to make anything else? ";
-	my $response = <STDIN>;
+	my $response = <STDIN>; #enter yes or no response
 	chomp($response);
 
 	if ($response =~ /^y/i) {
 		print "Enter meal you want to make ";
-		my $name = <STDIN>;
+		my $name = <STDIN>; #enter name of recipie file without .csv extension. Ex: Spaghetti.csv (filename) enter Spaghetti
 		chomp($name);
 
 		open RECIPIE, "/home/mattie/Documents/Recipies/$name.csv" or die "Recipie not found because $!\n";
